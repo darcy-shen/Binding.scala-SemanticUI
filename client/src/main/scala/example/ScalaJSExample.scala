@@ -32,7 +32,13 @@ object ScalaJSExample extends js.JSApp {
     val data = Var("")
     countRequest(data) // initial population
     <div>
-      <button onclick={event: Event => countRequest(data) }>
+      <select class="ui search dropdown">
+        <option>State</option>
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+      </select>
+      <button class="ui primary button" onclick={event: Event => countRequest(data) }>
         Boop
       </button>
       From Play: The server has been booped { data.bind } times. Shared Message: {shared.SharedMessages.itWorks}.
