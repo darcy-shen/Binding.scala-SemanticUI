@@ -5,6 +5,7 @@ import com.thoughtworks.binding.dom
 import org.scalajs.dom.document
 import org.scalajs.dom.ext.Ajax
 import org.scalajs.dom.raw.Event
+import org.scalajs.jquery.jQuery
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js
@@ -47,5 +48,7 @@ object ScalaJSExample extends js.JSApp {
 
   def main(): Unit = {
     dom.render(document.body, render)
+    import SemanticUI.jq2semantic
+    jQuery(".ui.dropdown").dropdown(js.Dynamic.literal(on = "hover"))
   }
 }
