@@ -6,10 +6,10 @@ import play.api.libs.json.Json
 import play.api.mvc._
 import shared.SharedMessages
 
-class Application @Inject() extends Controller {
+class Application @Inject() (webJarAssets: WebJarAssets) extends Controller {
 
   def index = Action {
-    Ok(views.html.index(SharedMessages.itWorks))
+    Ok(views.html.index(SharedMessages.itWorks, webJarAssets))
   }
 
 }

@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String, webJarAssets: WebJarAssets)(content: Html)
 
 <!DOCTYPE html>
 
@@ -7,6 +7,7 @@
     <title>@title</title>
     <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
     <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+    <link rel='stylesheet' href='@routes.WebJarAssets.at(webJarAssets.locate("semantic.min.css"))'>
   </head>
   <body>
    @content

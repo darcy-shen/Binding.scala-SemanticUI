@@ -1,4 +1,6 @@
 lazy val scalaV = "2.11.8"
+lazy val jQueryV = "2.1.3"
+lazy val semanticV = "2.2.2"
 
 lazy val server = (project in file("server")).settings(
   scalaVersion := scalaV,
@@ -12,6 +14,9 @@ lazy val server = (project in file("server")).settings(
     "com.typesafe.play" %% "play-slick" % "2.0.0",
     "com.typesafe.play" %% "play-slick-evolutions" % "2.0.0",
     "com.vmunier" %% "scalajs-scripts" % "1.0.0",
+    "org.webjars" %% "webjars-play" % "2.5.0",
+    "org.webjars" % "Semantic-UI" % semanticV,
+    "org.webjars" % "jquery" % jQueryV,
     specs2 % Test
   ),
   // Compile the project before generating Eclipse files, so that generated .scala or .class files for views and routes are present
@@ -25,6 +30,10 @@ lazy val client = (project in file("client")).settings(
   scalacOptions ++= Seq("-Xmax-classfile-name","78"),
   persistLauncher in Test := false,
   addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full),
+  jsDependencies ++= Seq(
+    "org.webjars" % "jquery" % jQueryV / "jquery.js" minified "jquery.min.js",
+    "org.webjars" % "Semantic-UI" % semanticV / "semantic.js" minified "semantic.min.js" dependsOn "jquery.js"
+  ),
   libraryDependencies ++= Seq(
     "org.scala-js" %%% "scalajs-dom" % "0.9.1",
     "org.scala-lang.modules" % "scala-xml_2.11" % "1.0.6",
