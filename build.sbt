@@ -27,6 +27,7 @@ lazy val server = (project in file("server")).settings(
 lazy val client = (project in file("client")).settings(
   scalaVersion := scalaV,
   persistLauncher := true,
+  mainClass in Compile := Some("example.ScalaJSExample"),
   scalacOptions ++= Seq("-Xmax-classfile-name","78"),
   persistLauncher in Test := false,
   addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full),

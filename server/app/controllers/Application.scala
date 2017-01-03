@@ -12,4 +12,7 @@ class Application @Inject() (webJarAssets: WebJarAssets) extends Controller {
     Ok(views.html.index(SharedMessages.itWorks, webJarAssets))
   }
 
+  def another = Action {
+    Ok(views.html.another(SharedMessages.itWorks, webJarAssets))
+  }
 }

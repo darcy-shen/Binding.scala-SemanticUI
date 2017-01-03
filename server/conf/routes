@@ -4,6 +4,7 @@
 
 # Home page
 GET     /                           controllers.Application.index
+GET     /another                    controllers.Application.another
 
 # Count Controller
 GET     /count                      controllers.CountController.count

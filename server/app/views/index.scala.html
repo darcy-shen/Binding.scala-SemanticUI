@@ -1,8 +1,14 @@
 @(message: String, webJarAssets: WebJarAssets)
 
 @main("Play with Scala.js", webJarAssets) {
-  @scalajs.html.scripts("client",
+  @scalajs.html.jsdeps("client",
     routes.Assets.versioned(_).toString,
     name => getClass.getResource(s"/public/$name") != null)
-
+  @scalajs.html.selectScript("client",
+    routes.Assets.versioned(_).toString,
+    name => getClass.getResource(s"/public/$name") != null)
+  <script>
+    ((typeof global === "object" && global &&
+          global["Object"] === Object) ? global : this)["example"]["ScalaJSExample"]().main();
+  </script>
 }

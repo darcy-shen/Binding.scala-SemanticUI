@@ -30,7 +30,7 @@ object ScalaJSExample extends js.JSApp {
   @dom
   def render = {
     val data = Var("")
-    val input = <input class="prompt" type="text" placeholder="Search countries..." />
+    val input = <input class="prompt" type="text" placeholder="Search country..." />
     countRequest(data) // initial population
     <div>
       <div class="ui search">
