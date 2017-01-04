@@ -1,0 +1,5 @@
+@(module: String)
+<script>
+    ((typeof global === "object" && global &&
+          global["Object"] === Object) ? global : this)["example"]["@module"]().main();
+</script>

@@ -8,6 +8,12 @@
     <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
     <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
     <link rel='stylesheet' href='@routes.WebJarAssets.at(webJarAssets.locate("semantic.min.css"))'>
+    @scalajs.html.jsdeps("client",
+    routes.Assets.versioned(_).toString,
+    name => getClass.getResource(s"/public/$name") != null)
+    @scalajs.html.selectScript("client",
+    routes.Assets.versioned(_).toString,
+    name => getClass.getResource(s"/public/$name") != null)
   </head>
   <body>
    @content
