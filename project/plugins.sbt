@@ -1,7 +1,6 @@
 // Comment to get more information during initialization
 logLevel := Level.Debug
 
-// Resolvers
 resolvers += "Typesafe repository" at "https://repo.typesafe.com/typesafe/releases/"
 
 resolvers += Resolver.url("heroku-sbt-plugin-releases",

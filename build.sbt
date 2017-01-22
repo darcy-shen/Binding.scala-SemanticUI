@@ -38,8 +38,9 @@ lazy val client = (project in file("client")).settings(
   libraryDependencies ++= Seq(
     "org.scala-js" %%% "scalajs-dom" % "0.9.1",
     "org.scala-lang.modules" % "scala-xml_2.11" % "1.0.6",
-    "com.thoughtworks.binding" %%% "dom" % "11.0.0-M1",
-    "com.thoughtworks.binding" %%% "futurebinding" % "11.0.0-M1",
+    "com.thoughtworks.binding" %%% "dom" % "10.0.2",
+    "com.thoughtworks.binding" %%% "futurebinding" % "10.0.2",
+    "com.sadhen.binding" %%% "semantic-ui" % "0.0.1-SNAPSHOT",
     "be.doeraene" %%% "scalajs-jquery" % "0.9.1",
     "fr.hmil" %%% "roshttp" % "1.1.0"
   )

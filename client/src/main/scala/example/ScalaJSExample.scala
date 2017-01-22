@@ -2,6 +2,8 @@ package example
 
 import com.thoughtworks.binding.Binding.Var
 import com.thoughtworks.binding.dom
+import com.sadhen.binding.SemanticUI.jq2semantic
+
 import org.scalajs.dom.document
 import org.scalajs.dom.ext.Ajax
 import org.scalajs.dom.raw.Event
@@ -55,7 +57,6 @@ object ScalaJSExample extends js.JSApp {
 
   def main(): Unit = {
     dom.render(document.body, render)
-    import SemanticUI.jq2semantic
     //import js.JSConverters._
     //val content = List("China", "Canada", "USA")
     //  .map(country => mutable.HashMap("title" -> country).toJSDictionary)
